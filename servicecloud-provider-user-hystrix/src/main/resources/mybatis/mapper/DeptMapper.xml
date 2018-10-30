@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lsh.cloud.provider.dao.DeptDao">
+
+	<select id="findById" resultType="com.lsh.cloud.model.Dept" parameterType="java.lang.Integer">
+		select id,num,pid,pids,simplename,fullname,tips,version from dept where id=#{deptno};
+	</select>
+	<select id="findAll" resultType="com.lsh.cloud.model.Dept">
+		select id,num,pid,pids,simplename,fullname,tips,version from dept;
+	</select>
+	<insert id="addDept" parameterType="com.lsh.cloud.model.Dept">
+		INSERT INTO dept(dname,db_source) VALUES(#{dname},DATABASE());
+	</insert>
+
+</mapper>
+ 
+
