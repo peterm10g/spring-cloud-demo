@@ -1,0 +1,15 @@
+server: 
+  port: 8011
+ 
+eureka: 
+  instance:
+    hostname: eureka8011.com
+  client: 
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8012.com:8012/eureka/,http://eureka8013.com:8013/eureka/
+
+ 
+
+ 

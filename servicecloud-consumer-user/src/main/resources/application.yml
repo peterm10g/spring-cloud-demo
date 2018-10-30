@@ -1,0 +1,8 @@
+server:
+  port: 8031
+  
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8011.com:8011/eureka/,http://eureka8012.com:8012/eureka/,http://eureka8013.com:8013/eureka/

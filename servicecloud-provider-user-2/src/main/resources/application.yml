@@ -1,0 +1,39 @@
+server:
+  port: 8002
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.lsh.cloud.model
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+
+
+spring:
+   application:
+    name: servicecloud-dept
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/guns2
+    username: root
+    password: zhuang1220
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8011.com:8011/eureka/,http://eureka8012.com:8012/eureka/,http://eureka8013.com:8013/eureka/
+  instance:
+    instance-id: servicecloud-dept8002
+    prefer-ip-address: true
+
+info:
+  app.name: lsh-microservicecloud
+  company.name: www.lsh123.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+

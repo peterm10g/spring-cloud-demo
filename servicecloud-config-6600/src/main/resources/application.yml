@@ -1,0 +1,13 @@
+server: 
+  port: 6600
+  
+spring:
+  application:
+    name: misservicecloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/peterm10g/misservicecloud-config.git
+ 
+

@@ -1,0 +1,29 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: microservicecloud-zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka8011.com:8011/eureka/,http://eureka8012.com:8012/eureka/,http://eureka8013.com:8013/eureka/
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true 
+ 
+ 
+zuul:
+  prefix: /lsh
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: servicecloud-dept
+    mydept.path: /mydept/**
+ 
+info:
+  app.name: lsh-microservicecloud
+  company.name: www.lsh123.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
